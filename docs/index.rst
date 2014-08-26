@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-scieloapi.py
+ratchetapi.py
 ============
 
 Release v\ |version|.
@@ -11,18 +11,18 @@ This software is licensed under `BSD License <http://opensource.org/licenses/BSD
 
 Usage example::
 
-    >>> import scieloapi
+    >>> import ratchetapi
 
-    >>> client = scieloapi.Client('some.user', 'some.api_key')
+    >>> client = ratchetapi.Client('some.user', 'some.api_key')
     
     >>> for journal in client.query('journals').all():
-    ...    print journal['id'], journal['title']
+    ...    print journal['code'], journal['total']
 
 
 User guide
 ----------
 
-Step-by-step guide to use the features provided by scieloapi.py for
+Step-by-step guide to use the features provided by ratchetapi.py for
 exploring data from SciELO. 
 
 .. toctree::

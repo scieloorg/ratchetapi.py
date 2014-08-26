@@ -3,7 +3,7 @@
 Main interface
 ==============
 
-.. module:: scieloapi
+.. module:: ratchetapi
 
 
 Domain-level classes
@@ -11,10 +11,10 @@ Domain-level classes
 
 These are the classes the users will more frequently interact with.
 
-.. autoclass:: scieloapi.Client
+.. autoclass:: ratchetapi.Client
    :inherited-members:
 
-.. autoclass:: scieloapi.Endpoint
+.. autoclass:: ratchetapi.Endpoint
    :inherited-members:
 
 
@@ -24,9 +24,9 @@ Low-level classes and functions
 Classes and functions that interface more closely with HTTP requests 
 and responses.
 
-.. autoclass:: scieloapi.Connector
+.. autoclass:: ratchetapi.Connector
    :inherited-members:
 
-.. automodule:: scieloapi.httpbroker
+.. automodule:: ratchetapi.httpbroker
    :inherited-members:
 
