@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# scieloapi.py documentation build configuration file, created by
+# ratchetapi.py documentation build configuration file, created by
 # sphinx-quickstart on Fri Aug  2 10:49:12 2013.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -17,7 +17,7 @@ import sys, os
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.abspath('..'))
-import scieloapi
+import ratchetapi
 
 class Mock(object):
     def __init__(self, *args, **kwargs):
@@ -63,7 +63,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'scieloapi.py'
+project = u'ratchetapi.py'
 copyright = u'2013, SciELO'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -187,7 +187,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'scieloapipydoc'
+htmlhelp_basename = 'ratchetapipydoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -206,7 +206,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'scieloapipy.tex', u'scieloapi.py Documentation',
+  ('index', 'ratchetapipy.tex', u'ratchetapi.py Documentation',
    u'SciELO', 'manual'),
 ]
 
@@ -236,7 +236,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'scieloapipy', u'scieloapi.py Documentation',
+    ('index', 'ratchetapipy', u'ratchetapi.py Documentation',
      [u'SciELO'], 1)
 ]
 
@@ -250,8 +250,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'scieloapipy', u'scieloapi.py Documentation',
-   u'SciELO', 'scieloapipy', 'One line description of project.',
+  ('index', 'ratchetapipy', u'rachetapi.py Documentation',
+   u'SciELO', 'ratchetapipy', 'One line description of project.',
    'Miscellaneous'),
 ]
 
