@@ -153,8 +153,8 @@ def get(api_uri, endpoint=None, resource_id=None, params=None, auth=None, check_
     like endpoints and resource ids. Any querystring params must
     be passed as dictionaries to `params`.
 
-    :param api_uri: e.g. http://ratchet.scielo.org/api/v1/
-    :param endpoint: (optional) a valid endpoint at http://ratchet.scielo.org/api/v1/
+    :param api_uri: e.g. http://manager.scielo.org/api/v1/
+    :param endpoint: (optional) a valid endpoint at http://manager.scielo.org/api/v1/
     :param resource_id: (optional) an int representing the document.
     :param params: (optional) params to be passed as query string.
     :param auth: (optional) a pair of `username` and `api_key`.

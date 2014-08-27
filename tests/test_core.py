@@ -29,7 +29,7 @@ class ConnectorHttpBrokerCollaborationTests(mocker.MockerTestCase):
 
     def test_fetching_all_docs_of_an_endpoint(self):
         mock_httpbroker = self.mocker.proxy(httpbroker)
-        mocker.expect(mock_httpbroker.post).passthrough()
+        #mocker.expect(mock_httpbroker.post).passthrough()
 
         mock_httpbroker.get('http://ratchet.scielo.org/api/v1/',
                             endpoint='journals',
@@ -49,7 +49,7 @@ class ConnectorHttpBrokerCollaborationTests(mocker.MockerTestCase):
 
     def test_single_document_of_an_endpoint(self):
         mock_httpbroker = self.mocker.proxy(httpbroker)
-        mocker.expect(mock_httpbroker.post).passthrough()
+        #mocker.expect(mock_httpbroker.post).passthrough()
 
         mock_httpbroker.get('http://ratchet.scielo.org/api/v1/',
                             endpoint='journals',
@@ -68,7 +68,7 @@ class ConnectorHttpBrokerCollaborationTests(mocker.MockerTestCase):
 
     def test_connection_error_fetching_data_raises_ConnectionError_after_retries(self):
         mock_httpbroker = self.mocker.proxy(httpbroker)
-        mocker.expect(mock_httpbroker.post).passthrough()
+        #mocker.expect(mock_httpbroker.post).passthrough()
 
         mock_httpbroker.get('http://ratchet.scielo.org/api/v1/',
                             endpoint='journals',
@@ -90,7 +90,7 @@ class ConnectorHttpBrokerCollaborationTests(mocker.MockerTestCase):
     def test_fetching_data_retry_on_ConnectionError(self):
         from ratchetapi.exceptions import ConnectionError
         mock_httpbroker = self.mocker.proxy(httpbroker)
-        mocker.expect(mock_httpbroker.post).passthrough()
+        #mocker.expect(mock_httpbroker.post).passthrough()
 
         mock_httpbroker.get('http://ratchet.scielo.org/api/v1/',
                             endpoint='journals',
@@ -117,7 +117,7 @@ class ConnectorHttpBrokerCollaborationTests(mocker.MockerTestCase):
 
     def test_fetch_data_with_querystring_params(self):
         mock_httpbroker = self.mocker.proxy(httpbroker)
-        mocker.expect(mock_httpbroker.post).passthrough()
+        #mocker.expect(mock_httpbroker.post).passthrough()
 
         mock_httpbroker.get('http://ratchet.scielo.org/api/v1/',
                             endpoint='journals',
@@ -144,7 +144,7 @@ class ConnectorHttpBrokerCollaborationTests(mocker.MockerTestCase):
 
     def test_unsupported_api_version_at_API_VERSIONS_raises_NotFound(self):
         mock_httpbroker = self.mocker.proxy(httpbroker)
-        mocker.expect(mock_httpbroker.post).passthrough()
+        #mocker.expect(mock_httpbroker.post).passthrough()
 
         mock_httpbroker.get('http://ratchet.scielo.org/api/v1/',
                             endpoint='journals',
@@ -348,9 +348,6 @@ class ClientTests(mocker.MockerTestCase):
         client = self._makeOne('any.user', 'any.apikey', connector_dep=doubles.ConnectorStub)
         with doubles.Patch(client, '_endpoints', mock_endpoints):
             self.assertRaises(AttributeError, lambda: client.journals)
-
-    def test_username_and_username_are_mandatory_during_initialization(self):
-        self.assertRaises(TypeError, lambda: self._makeOne('any.user'))
 
     def test_api_uri_parameterized_during_initialization(self):
         mock_connector = self.mocker.mock()
