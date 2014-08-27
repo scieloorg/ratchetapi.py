@@ -71,7 +71,7 @@ copyright = u'2013, SciELO'
 # built documents.
 #
 # The short X.Y version.
-version = scieloapi.__version__
+version = ratchetapi.__version__
 # The full version, including alpha/beta/rc tags.
 release = version
 
