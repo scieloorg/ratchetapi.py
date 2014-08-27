@@ -198,7 +198,7 @@ class Client(object):
         >>> cli.query('journals').all()
         <generator object iter_docs at 0x10fd59730>
     """
-    def __init__(self, username, api_key, api_uri=None,
+    def __init__(self, username=None, api_key=None, api_uri=None,
                  version=None, connector_dep=Connector, check_ca=False):
 
         self._connector = connector_dep(username,
