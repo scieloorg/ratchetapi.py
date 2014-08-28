@@ -171,6 +171,14 @@ class Endpoint(object):
         """
         return self.connector.iter_docs(self.name)
 
+    def filter(self, **kwargs):
+        """
+        Gets all documents of the endpoint that satisfies some criteria.
+
+        :param \*\*kwargs: filtering criteria as documented at `docs.scielo.org <http://ref.scielo.org/ph6gvk>`_
+        """
+        return self.connector.iter_docs(self.name, **kwargs)
+
 
 class Client(object):
     """
