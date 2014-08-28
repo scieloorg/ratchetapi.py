@@ -10,7 +10,7 @@ from . import exceptions
 
 logger = logging.getLogger(__name__)
 
-ITEMS_PER_REQUEST = 60
+ITEMS_PER_REQUEST = 20
 API_VERSIONS = ('v1',)
 RESOURCE_PATH_PATTERN = re.compile(r'/api/(\w+)/(\w+)/(\d+)/')
 
@@ -19,9 +19,9 @@ class Connector(object):
     """
     Encapsulates the HTTP requests layer.
 
-    :param username: valid username that has access to ratchet.scielo.org.
-    :param api_key: its respective api key.
-    :param api_uri: (optional) if connecting to a non official instance of `SciELO Manager <https://github.com/scieloorg/SciELO-Manager>`_
+    :param username: (optional) valid username that has access to ratchet.scielo.org. Mandatory for POST actions.
+    :param api_key: (optional) its respective api key. Mandatory for POST actions.
+    :param api_uri: (optional) if connecting to a non official instance of `Ratchet SciELO Manager <https://github.com/scieloorg/ratchet>`_
     :param version: (optional) by default the newest version is used.
     :param http_broker: (optional) a module to deal with http stuff. The reference API is implemented at :mod:`scieloapi.httpbroker`.
     :param check_ca: (optional) if certification authority should be checked during ssl sessions. Defaults to `False`.
@@ -62,8 +62,8 @@ class Connector(object):
         Dynamically adds http methods bound to user credentials.
 
         :param broker: reference to the module to be used as http broker.
-        :param username: valid username that has access to ratchet.scielo.org.
-        :param api_key: its respective api key.
+        :param username: valid username that has access to ratchet.scielo.org. Mandatory for POST actions.
+        :param api_key: its respective api key. Mandatory for POST actions.
         """
         bound_get = functools.partial(broker.get, auth=(username, api_key),
             check_ca=self.check_ca)
@@ -110,9 +110,6 @@ class Connector(object):
 
         :param endpoint: must be a valid endpoint at http://ratchet.scielo.org/api/v1/
         :param \*\*kwargs: are passed thru the request as query string params
-
-        Note that you need a valid API KEY in order to query the
-        Manager API. Read more at: http://ref.scielo.org/ddkpmx
         """
         offset = 0
         limit = ITEMS_PER_REQUEST
@@ -184,8 +181,8 @@ class Client(object):
     automatically instantiates :class:`Endpoint` for each one.
     If ``version`` is missing, the newest available will be used.
 
-    :param username: valid username that has access to ratchet.scielo.org. Only for method POST.
-    :param api_key: its respective api key. Only for method POST.
+    :param username: (optional) valid username that has access to ratchet.scielo.org. Mandatory for POST actions.
+    :param api_key: (optional) its respective api key. Mandatory for POST actions.
     :param api_uri: (optional) if connecting to a non official instance of `Ratchet SciELO <https://github.com/scieloorg/ratchet>`_
     :param version: (optional) by default the newest version is used.
     :param check_ca: (optional) if certification authority should be checked during ssl sessions. Defaults to `False`.
