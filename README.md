@@ -1,4 +1,4 @@
-scieloapi.py
+ratchetapi.py
 ============
 
 Thin wrapper around the SciELO Ratchet RESTful API.
